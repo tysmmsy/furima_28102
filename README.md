@@ -19,9 +19,22 @@
 
 - has_many :items
 - has_many :item_purchases
-- has_many :item_images
 - has_many :comments
+- has_one :address
 
+## address テーブル
+
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
+| postal_code | integer | null:false |
+| prefecture | integer | null:false, foreign_key: true |
+| city | string | null:false |
+| house_number | string | null:false |
+| building_name | string |
+| phone_number | integer | null:false |
+
+### Association
+- belongs_to :user
 
 ## items テーブル
 
