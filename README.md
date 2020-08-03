@@ -15,6 +15,11 @@
 | first_name_kana | string | null: false |
 | birthday | date | null:false |
 
+### Association
+- has_many :item_images
+- has_many :comments
+- has_one 
+
 
 ## items テーブル
 
