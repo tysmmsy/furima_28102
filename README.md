@@ -42,7 +42,7 @@
 
 - has_many :item_images
 - has_many :comments
-- has_one 
+- has_one  :item_purchases
 - belongs_to :user
 - belongs_to_active_hash :category
 - belongs_to_active_hash :item_condition
