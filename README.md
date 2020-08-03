@@ -38,11 +38,11 @@
 | name | string | null: false |
 | description | text | null: false |
 | price | integer | null:false |
-| category_id | references | null:false |
-| item_condition_id | references | null:false |
-| delivery_fee_id | references | null:false |
-| shipping_regions_id | references | null:false |
-| shipping_days_id | references | null:false |
+| category_id | references | null:false, foreign_key: true |
+| item_condition_id | references | null:false, foreign_key: true |
+| delivery_fee_id | references | null:false, foreign_key: true |
+| shipping_regions_id | references | null:false, foreign_key: true |
+| shipping_days_id | references | null:false, foreign_key: true |
 | item_image_id | references | null: false, foreign_key: true |
 
 
