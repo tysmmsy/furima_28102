@@ -1,4 +1,4 @@
-# README
+
 # テーブル設計
 
 ## users テーブル
@@ -58,6 +58,9 @@
 - belongs_to_active_hash :shipping_days
 
 ## item_images テーブル
+
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
 | url | string | null:false |
 | item_id | references | null: false, foreign_key: true |
 
@@ -65,6 +68,9 @@
 - belongs_to :item
 
 ## comments テーブル(中間テーブル)
+
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
 | comment | text | null: false, foreign_key: true |
 | item_id | references | null: false, foreign_key: true |
 | user_id | references | null: false, foreign_key: true |
@@ -76,6 +82,8 @@
 
 ## category テーブル(active_hash)
 
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
 | category | string | null:false |
 
 ### Association
@@ -84,6 +92,8 @@
 
 ## item_condition テーブル(active_hash)
 
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
 | item_condition | string | null:false |
 
 ### Association
@@ -92,6 +102,8 @@
 
 ## delivery_fee テーブル(active_hash)
 
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
 | delivery_fee | string | null:false |
 
 ### Association
@@ -99,6 +111,8 @@
 
 ## shipping_regions テーブル(active_hash)
 
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
 | shipping_regions | string | null:false |
 
 ### Association
@@ -106,6 +120,8 @@
 
 ## shipping_days テーブル(active_hash)
 
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
 | shipping_days | string | null:false |
 
 ### Association
