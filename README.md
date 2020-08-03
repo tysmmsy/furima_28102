@@ -16,9 +16,11 @@
 | birthday | date | null:false |
 
 ### Association
+
+- has_many :items
+- has_many :item_purchases
 - has_many :item_images
 - has_many :comments
-- has_one 
 
 
 ## items テーブル
@@ -82,3 +84,4 @@
 ### Association
 
 - belongs_to :item
+- belongs_to :user
