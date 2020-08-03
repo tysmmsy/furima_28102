@@ -27,7 +27,7 @@
 | Column  | Type    | Options                        |
 | ------- | ------- | ------------------------------ |
 | postal_code | integer | null:false |
-| prefecture | integer | null:false, foreign_key: true |
+| prefecture | integer | null:false |
 | city | string | null:false |
 | house_number | string | null:false |
 | building_name | string |
@@ -43,12 +43,12 @@
 | name | string | null: false |
 | description | text | null: false |
 | price | integer | null:false |
-| category_id | integer | null:false, foreign_key: true |
-| item_condition_id | integer | null:false, foreign_key: true |
-| delivery_fee_id | integer | null:false, foreign_key: true |
-| shipping_regions_id | integer | null:false, foreign_key: true |
-| shipping_days_id | integer | null:false, foreign_key: true |
-| item_image_id | integer | null: false, foreign_key: true |
+| category_id | integer | null:false |
+| item_condition_id | integer | null:false |
+| delivery_fee_id | integer | null:false |
+| shipping_regions_id | integer | null:false |
+| shipping_days_id | integer | null:false |
+| item_image_id | integer | null: false |
 
 
 ### Association
