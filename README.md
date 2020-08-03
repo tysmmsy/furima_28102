@@ -13,15 +13,8 @@
 | first_name | string | null: false |
 | last_name_kana | string | null: false |
 | first_name_kana | string | null: false |
-| birth_year | date | null: false |
-| birth_month | date | null:false |
-| birth_day | date | null:false |
+| birthday | date | null:false |
 
-### Association
-
-- has_many :comments
-- has_many :items
-- has_one :profile
 
 ## items テーブル
 
@@ -31,11 +24,11 @@
 | description | text | null: false |
 | price | integer | null:false |
 | category_id | integer | null:false, foreign_key: true |
-| item_condition_id | string | null:false, foreign_key: true |
-| delivery_fee_id | string | null:false, foreign_key: true |
-| shipping_regions_id | string | null:false, foreign_key: true |
-| shipping_days_id | string | null:false, foreign_key: true |
-| item_image_id | string | null: false, foreign_key: true |
+| item_condition_id | integer | null:false, foreign_key: true |
+| delivery_fee_id | integer | null:false, foreign_key: true |
+| shipping_regions_id | integer | null:false, foreign_key: true |
+| shipping_days_id | integer | null:false, foreign_key: true |
+| item_image_id | integer | null: false, foreign_key: true |
 
 
 ### Association
@@ -55,7 +48,7 @@
 | Column  | Type    | Options                        |
 | ------- | ------- | ------------------------------ |
 | url | string | null:false |
-| item_id | references | null: false, foreign_key: true |
+| item | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -66,8 +59,8 @@
 | Column  | Type    | Options                        |
 | ------- | ------- | ------------------------------ |
 | comment | text | null: false, foreign_key: true |
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| user | references | null: false, foreign_key: true |
+| item | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -78,8 +71,8 @@
 
 | Column  | Type    | Options                        |
 | ------- |  ------- | ------------------------------ |
-| user_id | references | null:false, foreign_key: true |
-| item_id | references | null:false, foreign_key: true |
+| user | references | null:false, foreign_key: true |
+| item | references | null:false, foreign_key: true |
 
 ### Association
 
