@@ -16,7 +16,6 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
     end
-  end
     context '新規登録がうまくいかないとき' do
       it 'nicknameが空だと登録できない' do
         @user.nickname = ''
@@ -96,4 +95,5 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
     end
+  end
 end

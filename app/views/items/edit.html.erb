@@ -10,7 +10,6 @@ app/assets/stylesheets/items/new.css %>
     <%= form_with local: true do |f| %>
       <% render 'shared/error_messages', model: f.object %>
       <%= render partial: "item.purchase", locals: { f: f } %>
-
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "変更する" ,class:"sell-btn" %>
