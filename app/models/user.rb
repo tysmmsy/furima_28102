@@ -6,15 +6,20 @@ class User < ApplicationRecord
 
   has_many :items
 
-    with_options presence: true do
-      validates :nickname
-      validates :email, uniqueness: { case_sensitive: false }, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-      validates :password, length: { minimum: 6 }, format: { with: /(?=.*\d+.*)(?=.*[a-zA-Z]+.*)./ }
-      validates :password_confirm, confirmation: true
-      validates :birthday
-      validates :last_name, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/ }
-      validates :first_name, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/ }
-      validates :last_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ } 
-      validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は半角英数字混合にしてください。' }
+  validates :email, uniqueness: { case_sensitive: true, message: 'は既に使用されています' }
+
+  with_options presence: true do
+    validates :nickname
+    validates :birthday
+
+    with_options format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'は全角で入力してください。' } do
+      validates :first_name
+      validates :last_name
     end
+    with_options format: { with: /\A[ァ-ヶー－]+\z/, message: 'は全角カタカナで入力して下さい。' } do
+      validates :first_name_kana
+      validates :last_name_kana
+    end
+  end
 end
