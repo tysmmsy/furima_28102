@@ -20,7 +20,7 @@ class Item < ApplicationRecord
     validates :shipping_days
   end
 
-  with_options numericality: { other_than: ０ } do
+  with_options numericality: { other_than: 0 } do
     validates :category_id
     validates :item_condition_id
     validates :delivery_fee_id
