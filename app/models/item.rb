@@ -5,8 +5,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :category
   belongs_to_active_hash :item_condition
   belongs_to_active_hash :delivery_fee
-  belongs_to_active_hash :shipping_regions
-  belongs_to_active_hash :shipping_days
+  belongs_to_active_hash :shipping_region
+  belongs_to_active_hash :shipping_day
 
   with_options presence: true do
     validates :image
@@ -16,8 +16,8 @@ class Item < ApplicationRecord
     validates :category
     validates :item_condition
     validates :delivery_fee
-    validates :shipping_regions
-    validates :shipping_days
+    validates :shipping_region
+    validates :shipping_day
   end
 
   with_options numericality: { other_than: 0 } do
@@ -25,6 +25,6 @@ class Item < ApplicationRecord
     validates :item_condition_id
     validates :delivery_fee_id
     validates :shipping_region_id
-    validates :shipping_days_id
+    validates :shipping_day_id
   end
 end

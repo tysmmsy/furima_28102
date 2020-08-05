@@ -1,5 +1,4 @@
-@@ -0,0 +1,21 @@
-class Shippng_region < ActiveHash::Base
+class ShippingRegion < ActiveHash::Base
   self.data = [
     {id: 0, name: '--'}, 
     {id: 1, name: '北海道'}, {id: 2, name: '青森県'}, {id: 3, name: '岩手県'},
@@ -19,4 +18,4 @@ class Shippng_region < ActiveHash::Base
     {id: 43, name: '熊本県'}, {id: 44, name: '大分県'}, {id: 45, name: '宮崎県'},
     {id: 46, name: '鹿児島県'}, {id: 47, name: '沖縄県'}
  ]
-end 
+end
