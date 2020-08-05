@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :category
+  belongs_to_active_hash :category, :item_condition 
 
-  validates :category_id, numericality: { other_than: 1 } 
+  validates :category_id, :item_condition_id, numericality: { other_than: 0 } 
 end
