@@ -62,7 +62,7 @@ RSpec.describe User, type: :model do
       it '苗字が半角英数字の場合登録できない' do
         @user.last_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name can't be blank", "Last name は全角で入力してください。")
+        expect(@user.errors.full_messages).to include("Last name can't be blank", 'Last name は全角で入力してください。')
       end
       it '名前が空では登録できない' do
         @user.first_name = ''
@@ -82,7 +82,7 @@ RSpec.describe User, type: :model do
       it '名前（カナ）が空では登録できない' do
         @user.last_name_kana = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name kana can't be blank", "Last name kana は全角カタカナで入力して下さい。")
+        expect(@user.errors.full_messages).to include("Last name kana can't be blank", 'Last name kana は全角カタカナで入力して下さい。')
       end
       it '名前（カナ）が半角文字の場合登録できない' do
         @user.last_name_kana = 'ﾀﾛｳ'
