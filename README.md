@@ -48,7 +48,6 @@
 | delivery_fee_id | integer | null:false |
 | shipping_regions_id | integer | null:false |
 | shipping_days_id | integer | null:false |
-| item_image_id | integer | null: false |
 
 
 ### Association
@@ -56,23 +55,13 @@
 - has_many :item_images
 - has_many :comments
 - has_one  :item_purchases
+- has_one_attached :image
 - belongs_to :user
 - belongs_to_active_hash :category
 - belongs_to_active_hash :item_condition
 - belongs_to_active_hash :delivery_fee
 - belongs_to_active_hash :shopping_regions
 - belongs_to_active_hash :shipping_days
-
-## item_images テーブル
-
-| Column  | Type    | Options                        |
-| ------- | ------- | ------------------------------ |
-| url | string | null:false |
-| item | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :item
 
 ## comments テーブル(中間テーブル)
 
