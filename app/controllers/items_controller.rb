@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :check_item, only: [:show, :edit, :update]
+  before_action :check_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, except: [:index, :show, :new]
 
   def index
@@ -35,6 +35,12 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
   end
 
   private
