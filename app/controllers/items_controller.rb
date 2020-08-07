@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :check_item, only: :show
+  before_action :move_to_index, except: [:index, :show, :new]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -9,7 +10,11 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    if user_signed_in?
+      @item = Item.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
@@ -31,5 +36,9 @@ class ItemsController < ApplicationController
     unless user_signed_in?
       redirect_to action: :index
     end
+  end
+
+  def check_item
+    @item = Item.find(params[:id])
   end
 end
