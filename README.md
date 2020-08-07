@@ -22,7 +22,7 @@
 - has_many :comments
 - has_one :address
 
-## address テーブル
+## addresses テーブル
 
 | Column  | Type    | Options                        |
 | ------- | ------- | ------------------------------ |
@@ -46,8 +46,8 @@
 | category_id | integer | null:false |
 | item_condition_id | integer | null:false |
 | delivery_fee_id | integer | null:false |
-| shipping_regions_id | integer | null:false |
-| shipping_days_id | integer | null:false |
+| shipping_region_id | integer | null:false |
+| shipping_day_id | integer | null:false |
 
 
 ### Association
