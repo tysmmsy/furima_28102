@@ -9,6 +9,9 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def new
     if user_signed_in?
       @item = Item.new
@@ -24,9 +27,6 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   private
@@ -49,6 +49,6 @@ class ItemsController < ApplicationController
 
   def check_item
     @item = Item.find(params[:id])
-    redirect_to action: :index unless user_signed_in? && current_user.id == @item.user.id
   end
+
 end
