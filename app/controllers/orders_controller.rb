@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :check_item, only: [:index, :create]
   before_action :move_to_index, only: :index
   before_action :item_owner_cannot_buy_own, only: :index
+  before_action :sold_item_cannot_buy, only: :index
 
   def index
   end
@@ -47,6 +48,10 @@ class OrdersController < ApplicationController
 
   def item_owner_cannot_buy_own
     redirect_to root_path if user_signed_in? && current_user.id == @item.user.id
+  end
+
+  def sold_item_cannot_buy
+    redirect_to root_path unless @item.order.nil?
   end
 
   def check_item
