@@ -7,7 +7,7 @@ class OrderAddress
     validates :shipping_region_id, numericality: { other_than: 0, message: "Select" }
     validates :city
     validates :house_number
-    validates :phone_number, format: { with: /\A\d{11}\z/, message: "is too long (maximum is 11 characters)"}
+    validates :phone_number, length: { maximum: 11, message: "is too long (maximum is 11 characters)"}
   end
 
   def save
